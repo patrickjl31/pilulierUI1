@@ -19,6 +19,7 @@ struct LigneRenseignement: View {
             ZoneEntree(message: titre, quoi: $reponse)
             Spacer()
         }
+        .disableAutocorrection(true)
         .padding(EdgeInsets(top: 3, leading: 3, bottom: 3, trailing: 3))
     }
 }

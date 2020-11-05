@@ -13,30 +13,32 @@ struct ContentView: View {
     //let filer = GestionDonnees.shared
     @ObservedObject var gd = GestionDonnees()
     
+    @State var selection = 0
     var body: some View {
        
-            
-        NavigationView {
-            VStack {
-                Text("Test de listes")
-                NavigationLink(
-                    destination: NouvellePrescriptionView(datas: gd, nom: ""),
-                    label: {
-                        Text("Nouvelle prescription")
-                    })
-                Text("testez ceci")
-                NavigationLink(destination: TestView()) {
-                    
-                    Text("Accéder au test")
-                }
-                    NavigationLink(destination: ListeAMM(amm: gd.medicamentsAMM.AMM)) {
-                        Text("Liste AMM (\(gd.medicamentsAMM.AMM.count))")
+        
+        TabView(selection: $selection,
+                content:  {
+                    //Text("Tous les patients")
+                    TousLesPatientsView(datas: gd)
+                        .tabItem {
+                        Text("Tous les patients")
+                        Image(systemName: "person.3.fill")
+                        }.tag(0)
+                    if gd.patientCourant > -1 {
+                        //Text("Tab Content 2")
+                        PatientCourantView(datas: gd)
+                        .tabItem {
+                            Text("Patient courant")
+                            Image(systemName: "person.fill")
+                        }.tag(1)
                     }
-            }
-                
-        .navigationBarTitle("Pilulier")
-            
-        }
+                    Text("Tab Content 3")
+                        .tabItem {
+                            Text("Mode d'emploi")
+                            Image(systemName: "ellipses.bubble")
+                        }.tag(1)
+                })
         
     }
     

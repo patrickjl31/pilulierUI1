@@ -17,6 +17,7 @@ struct SearchList: View {
     var body: some View {
         VStack{
             SearchBar(text: $text)
+            if text.count > 1 {
             List(datas.filter{ text.isEmpty ? true: $0.capitalized.hasPrefix(self.text) }, id: \.self){ (item) in
                 Text(item)
                     .font(.system(size: 10))
@@ -28,7 +29,7 @@ struct SearchList: View {
             }
             .environment(\.defaultMinListRowHeight, 10)
             .frame(width: 400, height: 200, alignment: .leading)
-            
+            }
         }
     }
 }

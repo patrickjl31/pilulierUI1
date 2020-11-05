@@ -13,7 +13,7 @@ struct TestView: View {
     @State var transfertIn : String = ""
     @State var etat = ""
     
-    @State var patient:Patient = Patient(nom: "", prenom: "")
+    @State var patient:Patient = Patient(nom: "", prenom: "", fiche: FicheMedicale(), mesPrescriptions: Prescriptions())
     
     let nameFile = "testFichier1"
     let filer = Filer()
@@ -25,7 +25,7 @@ struct TestView: View {
             Text("exporter le patient ?")
                 .onTapGesture {
                     self.transfertOut = self.patient.toJson() ?? ""
-                    self.filer.saveFileTo(fichier: self.transfertOut, nom: self.nameFile)
+                    self.filer.saveFile(fichier: self.transfertOut, toNom: self.nameFile)
                     self.etat = "Enregistrement de \(self.transfertOut) fait"
             }
             Text("Importer un patient ?")

@@ -32,4 +32,13 @@ struct AMMFile: Codable {
         }
         return res
     }
+    
+    func nameToAMM(named:String)->AMMObject?{
+        for medoc in AMM {
+            if medoc.denomination == named {
+                return medoc
+            }
+        }
+        return nil
+    }
 }

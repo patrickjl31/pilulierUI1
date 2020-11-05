@@ -9,11 +9,14 @@
 import Foundation
 
 struct Patient : Codable {
+    var id:String = UUID().uuidString
     var nom : String
     var prenom :String
-    
+    var fiche: FicheMedicale
     var remarques : String = ""
-    
+    // La liste des prescriptions
+    //var mesPrescriptions : [Prescription] = []
+    var mesPrescriptions : Prescriptions
     
     
     
@@ -29,9 +32,10 @@ struct Patient : Codable {
 }
 
 
-struct ficheMedicale: Codable {
-    var anneeNaissance:Int = 1950
-    var poids:Int = 70
-    var Allergies: String = ""
-    var aSavoir: String = ""
+struct FicheMedicale: Codable {
+    var anneeNaissance:String = "1950"
+    var poids:String = "70"
+    var dernierePesee : Date = Date()
+    var allergies: String = ""
+    //var aSavoir: String = ""
 }
