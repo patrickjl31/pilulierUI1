@@ -16,7 +16,14 @@ extension GestionDonnees {
         //var patient : Patient
         var index = isPatient(nom: nom, prenom: prenom)
         if index < 0 {
-            let patient = Patient(nom: nom, prenom: prenom, fiche: FicheMedicale(anneeNaissance: anneeN, poids: poids, dernierePesee: Date(), allergies: allergies), remarques: important, mesPrescriptions: Prescriptions())
+            //let patient = Patient()
+            let patient = Patient(nom: nom, prenom: prenom)
+            patient.remarques = important
+            patient.mesPrescriptions = Prescriptions()
+            patient.fiche.anneeNaissance = anneeN
+            patient.fiche.allergies = allergies
+            patient.fiche.poids = poids
+            patient.fiche.dernierePesee = Date()
             index = addPatient(patient: patient)
             //let _ = print("nouveau")
         } else {
@@ -36,8 +43,11 @@ extension GestionDonnees {
     func btnValidation(nom:String, prenom:String) -> Int {
         var index = isPatient(nom: nom, prenom: prenom)
         if index < 0 {
-            let lePatient = Patient(nom: nom, prenom: prenom, fiche: FicheMedicale(), mesPrescriptions: Prescriptions())
-            index = addPatient(patient: lePatient)
+            let patient = Patient(nom: nom, prenom: prenom)
+            patient.mesPrescriptions = Prescriptions()
+            patient.fiche = FicheMedicale()
+            
+            index = addPatient(patient: patient)
         } else {
            patientCourant = index
         }
@@ -45,34 +55,41 @@ extension GestionDonnees {
     }
     
     //Enregistre une nouvelle prescription
-    func btnSaveNewPrescription(idPresrcription: String, nom:String, pendant:Int, repeter: Int, prises: [Int], posologie: String)  {
-        var patientEnCours = lesPatients.l[patientCourant]
-        //Il y a un nom de médicament et un patient courant, sinon, on ne fait rien
-        if (nom.count > 2) , patientCourant > -1 {
-            // Si c'est une nouvelle prescription, elle n'a pas encore d'id
-            if idPresrcription == "" {
-                let newPrescription = Prescription(quoi: nom, quand: Date(), pour: patientEnCours.id)
-                newPrescription.prises = prises
-                newPrescription.repeterTousLes = repeter
-                newPrescription.pendant = pendant
-                newPrescription.posologie = posologie
-                // On l'ajoute aux prescriptions
-                patientEnCours.mesPrescriptions.enCours.append(newPrescription)
-            } else {
-                // On récupère la prescription à modifier
-                if let laPrescription = searchPrescription(idPrescription: idPresrcription, in: patientEnCours.mesPrescriptions) {
-                    laPrescription.prises = prises
-                    laPrescription.repeterTousLes = repeter
-                    laPrescription.pendant = pendant
-                    laPrescription.posologie = posologie
-                    laPrescription.renouveleLe = Date().stringAMidi()
-                    // on met de l'ordre dans les prescriptions
-                    patientEnCours.mesPrescriptions.dispachPrecriptions()
+    // inutiles : ordonneLe : String,renouveleLe : String,
+    func btnSaveNewPrescription(idPrescription: String, ident:String,  pendant:Int, repeter: Int, prises: [Int], posologie: String)  {
+        if patientCourant > -1 {
+            //var patientEnCours = lesPatients.l[patientCourant]
+            //Il y a un nom de médicament et un patient courant, sinon, on ne fait rien
+            if (ident.count > 2) , patientCourant > -1 {
+                // Si c'est une nouvelle prescription, elle n'a pas encore d'id, on  la crée
+                if idPrescription == "" {
+                    let newPrescription = Prescription(quoi: ident, quand: Date(), pour: lesPatients.l[patientCourant].id)
+                    newPrescription.renouveleLe = Date().stringAMidi()
+                    newPrescription.pendant = pendant
+                    newPrescription.repeterTousLes = repeter
+                    newPrescription.prises = prises
+                    newPrescription.posologie = posologie
+                    // On l'ajoute aux prescriptions du patient courant dans la liste des prescriptions en cours
+                    lesPatients.l[patientCourant].mesPrescriptions.enCours.append(newPrescription)
+                } else {
+                    // On récupère la prescription à modifier
+                    if let laPrescription = searchPrescription(idPrescription: idPrescription, in: lesPatients.l[patientCourant].mesPrescriptions) {
+                        // on la modifie
+                        laPrescription.renouveleLe = Date().stringAMidi()
+                        laPrescription.pendant = pendant
+                        laPrescription.repeterTousLes = repeter
+                        laPrescription.prises = prises
+                        laPrescription.posologie = posologie
+                        
+                        // on met de l'ordre dans les prescriptions
+                        lesPatients.l[patientCourant].mesPrescriptions.dispachPrescriptions()
+                    }
                 }
+                
+                //on sauvegarde
+                filer.saveAllPatients(patients: lesPatients)
             }
-            
-            //on sauvegarde
-            filer.saveAllPatients(patients: lesPatients)
+        
         }
     }
     

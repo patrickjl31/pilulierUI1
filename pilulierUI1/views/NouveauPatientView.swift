@@ -38,9 +38,9 @@ struct NouveauPatientView: View {
             Spacer()
             VStack{
                 CreationPatient(datas: datas, isCraeation: $isNewCreation, nom: $nom, prenom: $prenom)
-                LigneRenseignement(titre: "Date de naissance : ", reponse: $dateNaissance)
-                LigneRenseignement(titre: "Poids : ", reponse: $poids)
-                LigneRenseignement(titre: "Allergies", reponse: $allergies)
+                LigneRenseignement(titre: "Date de naissance : ", style: .numberPad, reponse: $dateNaissance)
+                LigneRenseignement(titre: "Poids : ", style: .numberPad, reponse: $poids)
+                LigneRenseignement(titre: "Allergies", style: .default, reponse: $allergies)
             }
             
             Divider()

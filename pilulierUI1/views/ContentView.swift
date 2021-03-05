@@ -37,7 +37,7 @@ struct ContentView: View {
                         .tabItem {
                             Text("Mode d'emploi")
                             Image(systemName: "ellipses.bubble")
-                        }.tag(1)
+                        }.tag(2)
                 })
         
     }

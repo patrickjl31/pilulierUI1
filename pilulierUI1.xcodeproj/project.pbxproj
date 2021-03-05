@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A003A1B25B9FDF9004E9884 /* EntrerDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A003A1A25B9FDF9004E9884 /* EntrerDate.swift */; };
+		2A003A2025BAC50F004E9884 /* MySearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A003A1F25BAC50F004E9884 /* MySearchBar.swift */; };
 		2A2228D424FB962E00E93C03 /* CIS_bdpm-reduit.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2A2228D324FB962E00E93C03 /* CIS_bdpm-reduit.txt */; };
 		2A2228D624FB96AE00E93C03 /* Filer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2228D524FB96AE00E93C03 /* Filer.swift */; };
 		2A2228D824FBCBF000E93C03 /* CIS_bdpm_reduit_pipe.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2A2228D724FBCBF000E93C03 /* CIS_bdpm_reduit_pipe.txt */; };
@@ -26,6 +28,9 @@
 		2A2A5FB025221F4700247097 /* NouvellePrescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2A5FAF25221F4700247097 /* NouvellePrescriptionView.swift */; };
 		2A2A5FB925222CC300247097 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2A5FB825222CC300247097 /* SearchBar.swift */; };
 		2A2A5FBD2522301100247097 /* SearchList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2A5FBC2522301100247097 /* SearchList.swift */; };
+		2A3BAC8925CF13F900B216C6 /* MyPrescriptionsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3BAC8825CF13F900B216C6 /* MyPrescriptionsList.swift */; };
+		2A3BAC8D25CFEAA300B216C6 /* ExtensionString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3BAC8C25CFEAA300B216C6 /* ExtensionString.swift */; };
+		2A3BAC9025D04C3900B216C6 /* PosologieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3BAC8F25D04C3900B216C6 /* PosologieView.swift */; };
 		2A46FBCA252BB9C300946C46 /* Pilulier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A46FBC9252BB9C300946C46 /* Pilulier.swift */; };
 		2A4723EA2531955C000B0C55 /* CreationPatient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4723E92531955C000B0C55 /* CreationPatient.swift */; };
 		2A527861252A084600FDB00B /* OuvertureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A527860252A084600FDB00B /* OuvertureView.swift */; };
@@ -52,6 +57,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2A003A1A25B9FDF9004E9884 /* EntrerDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntrerDate.swift; sourceTree = "<group>"; };
+		2A003A1F25BAC50F004E9884 /* MySearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySearchBar.swift; sourceTree = "<group>"; };
 		2A2228D324FB962E00E93C03 /* CIS_bdpm-reduit.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "CIS_bdpm-reduit.txt"; sourceTree = "<group>"; };
 		2A2228D524FB96AE00E93C03 /* Filer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filer.swift; sourceTree = "<group>"; };
 		2A2228D724FBCBF000E93C03 /* CIS_bdpm_reduit_pipe.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CIS_bdpm_reduit_pipe.txt; sourceTree = "<group>"; };
@@ -71,6 +78,9 @@
 		2A2A5FAF25221F4700247097 /* NouvellePrescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NouvellePrescriptionView.swift; sourceTree = "<group>"; };
 		2A2A5FB825222CC300247097 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		2A2A5FBC2522301100247097 /* SearchList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchList.swift; sourceTree = "<group>"; };
+		2A3BAC8825CF13F900B216C6 /* MyPrescriptionsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPrescriptionsList.swift; sourceTree = "<group>"; };
+		2A3BAC8C25CFEAA300B216C6 /* ExtensionString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionString.swift; sourceTree = "<group>"; };
+		2A3BAC8F25D04C3900B216C6 /* PosologieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosologieView.swift; sourceTree = "<group>"; };
 		2A46FBC9252BB9C300946C46 /* Pilulier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pilulier.swift; sourceTree = "<group>"; };
 		2A4723E92531955C000B0C55 /* CreationPatient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreationPatient.swift; sourceTree = "<group>"; };
 		2A527860252A084600FDB00B /* OuvertureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OuvertureView.swift; sourceTree = "<group>"; };
@@ -110,6 +120,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A003A1825B9FA48004E9884 /* Help */ = {
+			isa = PBXGroup;
+			children = (
+				2A527866252A131A00FDB00B /* HelpView.swift */,
+			);
+			path = Help;
+			sourceTree = "<group>";
+		};
 		2A27A34A24CE3D6400BD62B9 /* ressources */ = {
 			isa = PBXGroup;
 			children = (
@@ -134,6 +152,7 @@
 				2A2A5FB325222BE600247097 /* searchBar */,
 				2A2A5F9C252212FC00247097 /* ZoneTitre.swift */,
 				2A2A5F99252212FC00247097 /* LigneRenseignement.swift */,
+				2A003A1A25B9FDF9004E9884 /* EntrerDate.swift */,
 				2A4723E92531955C000B0C55 /* CreationPatient.swift */,
 				2A87797A2532F27A00134251 /* PatientListContainer.swift */,
 				2A2A5F97252212FC00247097 /* ZoneEntree.swift */,
@@ -151,8 +170,18 @@
 			children = (
 				2A2A5FB825222CC300247097 /* SearchBar.swift */,
 				2A2A5FBC2522301100247097 /* SearchList.swift */,
+				2A003A1F25BAC50F004E9884 /* MySearchBar.swift */,
 			);
 			path = searchBar;
+			sourceTree = "<group>";
+		};
+		2A3BAC8725CF13C400B216C6 /* VuesPartielles */ = {
+			isa = PBXGroup;
+			children = (
+				2A3BAC8825CF13F900B216C6 /* MyPrescriptionsList.swift */,
+				2A3BAC8F25D04C3900B216C6 /* PosologieView.swift */,
+			);
+			path = VuesPartielles;
 			sourceTree = "<group>";
 		};
 		2A741A782526890A0019B6E8 /* radioB */ = {
@@ -170,6 +199,7 @@
 			children = (
 				2A767E3824FEDEF200B47681 /* ExtensionDate.swift */,
 				2A590BE225310E060023AB69 /* ExtensionBoutonsActions.swift */,
+				2A3BAC8C25CFEAA300B216C6 /* ExtensionString.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -235,6 +265,7 @@
 		2A9EBC3B250266D0006F4592 /* vuesElementaires */ = {
 			isa = PBXGroup;
 			children = (
+				2A3BAC8725CF13C400B216C6 /* VuesPartielles */,
 				2A2A5F96252212FC00247097 /* elements graphiques */,
 			);
 			path = vuesElementaires;
@@ -249,10 +280,10 @@
 				2A527860252A084600FDB00B /* OuvertureView.swift */,
 				2A527863252A0E3A00FDB00B /* TousLesPatientsView.swift */,
 				2A2A5FAA25221B0300247097 /* NouveauPatientView.swift */,
-				2A527866252A131A00FDB00B /* HelpView.swift */,
 				2A2A5FAF25221F4700247097 /* NouvellePrescriptionView.swift */,
-				2AD7C55F24CDF32C00E888B4 /* TestView.swift */,
 				2AC3709F24FFE51300C032D8 /* ListeAMM.swift */,
+				2A003A1825B9FA48004E9884 /* Help */,
+				2AD7C55F24CDF32C00E888B4 /* TestView.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -334,7 +365,9 @@
 				2A2A5FA2252212FC00247097 /* EnterPassword.swift in Sources */,
 				2AD7C56024CDF32C00E888B4 /* TestView.swift in Sources */,
 				2A767E3924FEDEF200B47681 /* ExtensionDate.swift in Sources */,
+				2A003A1B25B9FDF9004E9884 /* EntrerDate.swift in Sources */,
 				2A8FEF8324CD9B2F00F355B1 /* AppDelegate.swift in Sources */,
+				2A003A2025BAC50F004E9884 /* MySearchBar.swift in Sources */,
 				2A2A5FB925222CC300247097 /* SearchBar.swift in Sources */,
 				2A741A76252686230019B6E8 /* TestRadioButton.swift in Sources */,
 				2A527864252A0E3A00FDB00B /* TousLesPatientsView.swift in Sources */,
@@ -345,9 +378,11 @@
 				2A2A5FB025221F4700247097 /* NouvellePrescriptionView.swift in Sources */,
 				2A2A5FA6252212FC00247097 /* BigButton.swift in Sources */,
 				2A2A5FA4252212FC00247097 /* ZoneTitre.swift in Sources */,
+				2A3BAC8925CF13F900B216C6 /* MyPrescriptionsList.swift in Sources */,
 				2AD19136254DC6C900141F97 /* Prescriptions.swift in Sources */,
 				2A8FEF9A24CD9BB200F355B1 /* GestionDonnees.swift in Sources */,
 				2A2A5F9F252212FC00247097 /* ZoneEntree.swift in Sources */,
+				2A3BAC8D25CFEAA300B216C6 /* ExtensionString.swift in Sources */,
 				2A2A5FA1252212FC00247097 /* LigneRenseignement.swift in Sources */,
 				2A590BE325310E060023AB69 /* ExtensionBoutonsActions.swift in Sources */,
 				2A27A34924CE3BB000BD62B9 /* AMMFile.swift in Sources */,
@@ -365,6 +400,7 @@
 				2AC370A024FFE51300C032D8 /* ListeAMM.swift in Sources */,
 				2A2A5FAB25221B0300247097 /* NouveauPatientView.swift in Sources */,
 				2A741A7325267DB40019B6E8 /* RadioButton.swift in Sources */,
+				2A3BAC9025D04C3900B216C6 /* PosologieView.swift in Sources */,
 				2A8FEF8524CD9B2F00F355B1 /* SceneDelegate.swift in Sources */,
 				2A8FEF8724CD9B2F00F355B1 /* ContentView.swift in Sources */,
 			);

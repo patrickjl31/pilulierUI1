@@ -8,8 +8,26 @@
 
 import Foundation
 
-struct ListePatients: Codable {
-    var l: [Patient] = []
+//, ObservableObject
+class  ListePatients: Codable {
+    @Published var l: [Patient] = []
+    
+    enum CodingKeys: String, CodingKey {
+        case l
+    }
+    required init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        l = try values.decode([Patient].self, forKey: .l)
+        
+    }
+    init() {
+        
+    }
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(l, forKey: .l)
+    }
+    
     
     func toJson()->String?{
         let encoder = JSONEncoder()
@@ -19,7 +37,7 @@ struct ListePatients: Codable {
         return nil
     }
     
-    mutating func deleteElem(index: Int){
+    func deleteElem(index: Int){
         l.remove(at: index)
         
     }

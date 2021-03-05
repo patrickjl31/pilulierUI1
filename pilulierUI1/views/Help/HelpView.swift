@@ -12,7 +12,7 @@ struct HelpView: View {
     var body: some View {
         VStack {
             ZoneTitre(texte: "Pilulier, mode d'emploi" )
-            Text(HELP)
+            Text(HELPF1)
                 .multilineTextAlignment(.leading)
                 .padding(EdgeInsets(top: 3, leading: 16, bottom: 3, trailing: 16))
         }

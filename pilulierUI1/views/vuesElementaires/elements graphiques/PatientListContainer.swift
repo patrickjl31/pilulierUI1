@@ -63,7 +63,7 @@ struct PatientListContainer: View {
 
 struct PatientListContainer_Previews: PreviewProvider {
     static var previews: some View {
-        PatientListContainer(patient: Patient(nom: "ducon", prenom: "Marcel", fiche: FicheMedicale(anneeNaissance: "1980", poids: "89", dernierePesee: Date(), allergies: ""), mesPrescriptions: Prescriptions()), current: true, datas: GestionDonnees()).previewLayout(.sizeThatFits)
+        PatientListContainer(patient: Patient(nom: "Ducon", prenom: "Marcel"), current: true, datas: GestionDonnees())
     }
     
 }

@@ -13,7 +13,7 @@ struct TestView: View {
     @State var transfertIn : String = ""
     @State var etat = ""
     
-    @State var patient:Patient = Patient(nom: "", prenom: "", fiche: FicheMedicale(), mesPrescriptions: Prescriptions())
+    @State var patient:Patient = Patient(nom: "Nom", prenom: "Prénom")
     
     let nameFile = "testFichier1"
     let filer = Filer()
@@ -31,7 +31,7 @@ struct TestView: View {
             Text("Importer un patient ?")
                 .onTapGesture {
                     self.transfertIn = self.filer.readFileFrom(nom: self.nameFile) ?? ""
-                    self.etat = self.transfertIn ?? ""
+                    self.etat = self.transfertIn 
                     self.etat = "J'ai lu \(self.etat)"
             }
             Text(etat)

@@ -8,8 +8,14 @@
 
 import SwiftUI
 
+enum typeEntree {
+    case lettre
+    case nombre
+}
+
 struct LigneRenseignement: View {
     var titre: String
+    var style: UIKeyboardType
     @Binding var reponse: String
     var body: some View {
         
@@ -20,12 +26,13 @@ struct LigneRenseignement: View {
             Spacer()
         }
         .disableAutocorrection(true)
+        .keyboardType(style)
         .padding(EdgeInsets(top: 3, leading: 3, bottom: 3, trailing: 3))
     }
 }
 
 struct LigneRenseignement_Previews: PreviewProvider {
     static var previews: some View {
-        LigneRenseignement(titre: "Nom : ", reponse: Binding.constant("Duchnoc"))
+        LigneRenseignement(titre: "Nom : ", style: .numberPad, reponse: Binding.constant("Duchnoc"))
     }
 }

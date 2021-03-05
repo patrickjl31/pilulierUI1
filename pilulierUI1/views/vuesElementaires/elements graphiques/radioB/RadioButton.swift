@@ -13,7 +13,7 @@ struct RadioButton: View {
     
     @Binding var isLigth: Bool
     
-    var radioB: Image {Image(systemName: isLigth ? "smallcircle.fill.circle.fill" : "smallcircle.fill.circle")}
+    //var radioB: Image {Image(systemName: isLigth ? "smallcircle.fill.circle.fill" : "smallcircle.fill.circle")}
     
     
     var body: some View {
@@ -25,7 +25,8 @@ struct RadioButton: View {
                 
                 Text(texte)
                 //Text(isLigth ? ": Oui" : ": Non")
-                radioB
+                //radioB
+                Image(systemName: isLigth ? "smallcircle.fill.circle.fill" : "smallcircle.fill.circle")
                 //Image(systemName: isLigth ? "checkmark.circle" : "circle")
             }
         }

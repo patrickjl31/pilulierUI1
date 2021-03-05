@@ -19,8 +19,8 @@ struct CreationPatient: View {
     
     var body: some View {
         VStack{
-            LigneRenseignement(titre: "Nom : ", reponse: $nom)
-            LigneRenseignement(titre: "Prénom : ", reponse: $prenom)
+            LigneRenseignement(titre: "Nom : ", style: .default, reponse: $nom)
+            LigneRenseignement(titre: "Prénom : ", style: .default, reponse: $prenom)
             if !isCraeation {
                 Button(action: {
                         // Validation
