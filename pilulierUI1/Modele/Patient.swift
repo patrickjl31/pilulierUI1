@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Patient : Codable {
+class Patient : Codable, ObservableObject {
     var id:String = UUID().uuidString
     var nom : String = ""
     var prenom :String = ""
@@ -16,7 +16,7 @@ class Patient : Codable {
     var remarques : String = ""
     // La liste des prescriptions
     //var mesPrescriptions : [Prescription] = []
-    var mesPrescriptions : Prescriptions = Prescriptions()
+    @Published var mesPrescriptions : Prescriptions = Prescriptions()
     var prescriptionsEnAttente : [Prescription] = []
     
     init(nom: String, prenom:String) {
@@ -24,7 +24,7 @@ class Patient : Codable {
         self.prenom = prenom
         
     }
-    /*
+    ///*
     
     enum  CodingKeys: String, CodingKey {
         case id
@@ -58,7 +58,7 @@ class Patient : Codable {
         try container.encode(prescriptionsEnAttente, forKey: .prescriptionsEnAttente)
     }
     
-     */
+     //*/
     
     /*
     //Valide les prescriptions en attente

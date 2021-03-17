@@ -8,9 +8,31 @@
 
 import Foundation
 class Prescriptions: Codable, ObservableObject {
-    var enCours : [Prescription] = []
-    var terminees : [Prescription] = []
+    var enCours : [Prescription] = [] {
+        willSet {
+            objectWillChange.send()
+        }
+    }
+    var terminees : [Prescription] = [] {
+        willSet {
+            objectWillChange.send()
+        }
+    }
     
+    enum CodingKeys: String, CodingKey {
+        case enCours
+        case terminees
+    }
+    required init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        enCours = try values.decode([Prescription].self, forKey: .enCours)
+        terminees = try values.decode([Prescription].self, forKey: .terminees)
+        
+    }
+    init() {
+        //enCours = []
+        //terminees = []
+    }
     
     func toJson()->String?{
         let encoder = JSONEncoder()
@@ -104,6 +126,33 @@ class Prescriptions: Codable, ObservableObject {
                 terminees.remove(atOffsets: offset)
             }
         }
+    }
+    
+    //-------------------------------------------
+    //---Extraction d'un pilulier-----
+    func extractPilulier(forDay : Date) -> [String:[Any]] {
+        var res = ["matin":[],"midi":[],"soir":[],"nuit":[],]
+        for prescription in self.enCours {
+            if prescription.isActiveAtDate(date: forDay) {
+                if prescription.matin.count > 0 {
+                    let uneAutre = [prescription.identification, prescription.matin]
+                    res["matin"]?.append(uneAutre)
+                }
+                if prescription.midi.count > 0 {
+                    let uneAutre = [prescription.identification, prescription.midi]
+                    res["midi"]?.append(uneAutre)
+                }
+                if prescription.soir.count > 0 {
+                    let uneAutre = [prescription.identification, prescription.soir]
+                    res["soir"]?.append(uneAutre)
+                }
+                if prescription.nuit.count > 0 {
+                    let uneAutre = [prescription.identification, prescription.nuit]
+                    res["nuit"]?.append(uneAutre)
+                }
+            }
+        }
+        return res
     }
     
 }

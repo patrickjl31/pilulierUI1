@@ -54,6 +54,11 @@
 		2AD19136254DC6C900141F97 /* Prescriptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD19135254DC6C900141F97 /* Prescriptions.swift */; };
 		2AD1913D254EA71900141F97 /* RadioButtonWithInt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD1913C254EA71900141F97 /* RadioButtonWithInt.swift */; };
 		2AD7C56024CDF32C00E888B4 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD7C55F24CDF32C00E888B4 /* TestView.swift */; };
+		2AFC483925FE07B2008EE670 /* StyleBouton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFC483825FE07B2008EE670 /* StyleBouton.swift */; };
+		2AFC483E25FE726B008EE670 /* PilulierHebdoLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFC483D25FE726B008EE670 /* PilulierHebdoLine.swift */; };
+		2AFC484125FFC09F008EE670 /* PilulierDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFC484025FFC09F008EE670 /* PilulierDayView.swift */; };
+		2AFC48442600018F008EE670 /* PilulierHebdoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFC48432600018F008EE670 /* PilulierHebdoView.swift */; };
+		2AFC48472600FB4D008EE670 /* TextStylePersonnalise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFC48462600FB4D008EE670 /* TextStylePersonnalise.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -107,6 +112,11 @@
 		2AD1913C254EA71900141F97 /* RadioButtonWithInt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButtonWithInt.swift; sourceTree = "<group>"; };
 		2AD7C55D24CDA1D600E888B4 /* pilulierUI1.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = pilulierUI1.entitlements; sourceTree = "<group>"; };
 		2AD7C55F24CDF32C00E888B4 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
+		2AFC483825FE07B2008EE670 /* StyleBouton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleBouton.swift; sourceTree = "<group>"; };
+		2AFC483D25FE726B008EE670 /* PilulierHebdoLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PilulierHebdoLine.swift; path = ../../../../../../../../../../PilulierHebdoLine.swift; sourceTree = "<group>"; };
+		2AFC484025FFC09F008EE670 /* PilulierDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PilulierDayView.swift; sourceTree = "<group>"; };
+		2AFC48432600018F008EE670 /* PilulierHebdoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PilulierHebdoView.swift; sourceTree = "<group>"; };
+		2AFC48462600FB4D008EE670 /* TextStylePersonnalise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextStylePersonnalise.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,8 +159,11 @@
 		2A2A5F96252212FC00247097 /* elements graphiques */ = {
 			isa = PBXGroup;
 			children = (
+				2AFC483C25FE7215008EE670 /* pilulierHebdo */,
+				2AFC483725FE075F008EE670 /* neumorphicButtons */,
 				2A2A5FB325222BE600247097 /* searchBar */,
 				2A2A5F9C252212FC00247097 /* ZoneTitre.swift */,
+				2AFC48462600FB4D008EE670 /* TextStylePersonnalise.swift */,
 				2A2A5F99252212FC00247097 /* LigneRenseignement.swift */,
 				2A003A1A25B9FDF9004E9884 /* EntrerDate.swift */,
 				2A4723E92531955C000B0C55 /* CreationPatient.swift */,
@@ -288,6 +301,24 @@
 			path = views;
 			sourceTree = "<group>";
 		};
+		2AFC483725FE075F008EE670 /* neumorphicButtons */ = {
+			isa = PBXGroup;
+			children = (
+				2AFC483825FE07B2008EE670 /* StyleBouton.swift */,
+			);
+			path = neumorphicButtons;
+			sourceTree = "<group>";
+		};
+		2AFC483C25FE7215008EE670 /* pilulierHebdo */ = {
+			isa = PBXGroup;
+			children = (
+				2AFC483D25FE726B008EE670 /* PilulierHebdoLine.swift */,
+				2AFC484025FFC09F008EE670 /* PilulierDayView.swift */,
+				2AFC48432600018F008EE670 /* PilulierHebdoView.swift */,
+			);
+			path = pilulierHebdo;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -369,9 +400,11 @@
 				2A8FEF8324CD9B2F00F355B1 /* AppDelegate.swift in Sources */,
 				2A003A2025BAC50F004E9884 /* MySearchBar.swift in Sources */,
 				2A2A5FB925222CC300247097 /* SearchBar.swift in Sources */,
+				2AFC483E25FE726B008EE670 /* PilulierHebdoLine.swift in Sources */,
 				2A741A76252686230019B6E8 /* TestRadioButton.swift in Sources */,
 				2A527864252A0E3A00FDB00B /* TousLesPatientsView.swift in Sources */,
 				2A87797B2532F27A00134251 /* PatientListContainer.swift in Sources */,
+				2AFC484125FFC09F008EE670 /* PilulierDayView.swift in Sources */,
 				2A527867252A131A00FDB00B /* HelpView.swift in Sources */,
 				2A60F343254B046600CFC2A7 /* ListePatients.swift in Sources */,
 				2A2A5FBD2522301100247097 /* SearchList.swift in Sources */,
@@ -380,9 +413,12 @@
 				2A2A5FA4252212FC00247097 /* ZoneTitre.swift in Sources */,
 				2A3BAC8925CF13F900B216C6 /* MyPrescriptionsList.swift in Sources */,
 				2AD19136254DC6C900141F97 /* Prescriptions.swift in Sources */,
+				2AFC483925FE07B2008EE670 /* StyleBouton.swift in Sources */,
 				2A8FEF9A24CD9BB200F355B1 /* GestionDonnees.swift in Sources */,
+				2AFC48442600018F008EE670 /* PilulierHebdoView.swift in Sources */,
 				2A2A5F9F252212FC00247097 /* ZoneEntree.swift in Sources */,
 				2A3BAC8D25CFEAA300B216C6 /* ExtensionString.swift in Sources */,
+				2AFC48472600FB4D008EE670 /* TextStylePersonnalise.swift in Sources */,
 				2A2A5FA1252212FC00247097 /* LigneRenseignement.swift in Sources */,
 				2A590BE325310E060023AB69 /* ExtensionBoutonsActions.swift in Sources */,
 				2A27A34924CE3BB000BD62B9 /* AMMFile.swift in Sources */,

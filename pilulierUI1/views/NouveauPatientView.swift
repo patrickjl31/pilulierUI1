@@ -9,7 +9,11 @@
 import SwiftUI
 
 struct NouveauPatientView: View {
+    
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    
     @ObservedObject var datas: GestionDonnees
+    
     @State var isNewCreation:Bool
     // Reçoit un objet patient
     @State var nom:String //= ""
@@ -38,7 +42,7 @@ struct NouveauPatientView: View {
             Spacer()
             VStack{
                 CreationPatient(datas: datas, isCraeation: $isNewCreation, nom: $nom, prenom: $prenom)
-                LigneRenseignement(titre: "Date de naissance : ", style: .numberPad, reponse: $dateNaissance)
+                LigneRenseignement(titre: "Date de naissance : ", style: .default, reponse: $dateNaissance)
                 LigneRenseignement(titre: "Poids : ", style: .numberPad, reponse: $poids)
                 LigneRenseignement(titre: "Allergies", style: .default, reponse: $allergies)
             }
@@ -49,11 +53,16 @@ struct NouveauPatientView: View {
             Spacer()
             Button(action: {
                 datas.btnEnregistrerNewPatient(nom: nom, prenom: prenom,   anneeN: dateNaissance, poids: poids, allergies: allergies, important: important)
+                // on quitte cette page
+                self.presentationMode.wrappedValue.dismiss()
                 print("Enregistrement")
                 
             }, label: {
-                BigButton(texte: BTN_ENREGISTRER, largeur: 300)
+                //BigButton(texte: BTN_ENREGISTRER, largeur: 300)
+                TextStylePersonnalise(texte: BTN_ENREGISTRER)
+                
             })
+            .buttonStyle(SimpleButtonStyle())
             Spacer()
         }
     }

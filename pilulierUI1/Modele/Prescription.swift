@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Prescription : Codable {
+class Prescription : Codable, ObservableObject {
     var id : String = UUID().uuidString
     var pourPatient : String //l'id du patient
     var identification : String = "" //AMMObject.denomination
@@ -18,6 +18,10 @@ class Prescription : Codable {
     var pendant : Int = 8 // durée de la prescription. Si -1, indéfini.
     var repeterTousLes : Int = 1
     // combien d'unités matin, midi, soir, nuit
+    var matin : String = ""
+    var midi : String = ""
+    var soir : String = ""
+    var nuit : String = ""
     var prises = [0,0,0,0]
     // 5 comprimés par prise...?
     var posologie = ""

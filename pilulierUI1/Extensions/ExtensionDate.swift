@@ -26,6 +26,13 @@ extension Date {
         formatter.dateFormat = "dd-MM-yyyy"
         return formatter.string(from: self) + " 12:00:00 Z"
     }
+    //Renvoie une date avec le nom du jour
+    func stringWithQuantieme() -> String {
+        let formatter = DateFormatter()
+        //formatter.dateStyle = .short
+        formatter.dateFormat = "EEEE dd-MM-yyyy"
+        return formatter.string(from: self)
+    }
     
     //Renvoie le jour en n
     func jourEn( en: Int) -> Date {

@@ -17,7 +17,7 @@ struct PatientListContainer: View {
     @State var modificationPatient = false
     
     var body: some View {
-        
+        //let check = (current ? )
         HStack {
             
             VStack{
@@ -36,8 +36,12 @@ struct PatientListContainer: View {
                 .font(.footnote)
             }
             Spacer()
-            Image(systemName: (current) ? "checkmark.circle" : "")
-                .font(.title)
+            if current {
+                Image(systemName: "checkmark.circle")
+                    .font(.title)
+            }
+            //Image(systemName: (current) ? "checkmark.circle" : "")
+               // .font(.title)
         }
         
         .onTapGesture(count: 1, perform: {

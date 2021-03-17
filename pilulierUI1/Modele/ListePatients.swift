@@ -9,7 +9,7 @@
 import Foundation
 
 //, ObservableObject
-class  ListePatients: Codable {
+class ListePatients: Codable, ObservableObject {
     @Published var l: [Patient] = []
     
     enum CodingKeys: String, CodingKey {

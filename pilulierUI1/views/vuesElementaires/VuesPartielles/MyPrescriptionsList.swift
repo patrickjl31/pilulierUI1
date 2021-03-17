@@ -11,7 +11,7 @@ import SwiftUI
 struct MyPrescriptionsList: View {
     
     @ObservedObject var datas: GestionDonnees
-    var prescriptions : Prescriptions
+    //var prescriptions : Prescriptions
     
     @State private var refreshID = UUID()
     
@@ -25,7 +25,7 @@ struct MyPrescriptionsList: View {
                     ForEach(moi.mesPrescriptions.enCours, id:\.id) { (prescription)  in
                         if let nom = prescription.identification.firstWord() {
                             HStack {
-                                NavigationLink(nom, destination: NouvellePrescriptionView(datas: datas, idPrescription: prescription.id, identification: prescription.identification, pendantS: String(prescription.pendant), repeterTousLesS: String(prescription.repeterTousLes), prises: prescription.prises, posologie: prescription.posologie))
+                                NavigationLink(nom, destination: NouvellePrescriptionView(datas: datas, idPrescription: prescription.id, identification: prescription.identification, pendantS: String(prescription.pendant), repeterTousLesS: String(prescription.repeterTousLes), prises: prescription.prises, matin: prescription.matin, midi: prescription.midi,soir: prescription.soir,nuit: prescription.nuit,posologie: prescription.posologie))
                                 //Text(nom)
                                 PosologieView(prescription: prescription)
                             }
@@ -61,9 +61,12 @@ struct MyPrescriptionsList: View {
                 
             }
         }
+        
         //on delete
         
+        
     }
+    
     
     //Fonction de délétion
     func delete(at offsets: IndexSet, inListe:Int)  {
@@ -75,7 +78,7 @@ struct MyPrescriptionsList: View {
 
 struct MyPrescriptionsList_Previews: PreviewProvider {
     static var previews: some View {
-        MyPrescriptionsList(datas: GestionDonnees(), prescriptions: Prescriptions())
+        MyPrescriptionsList(datas: GestionDonnees())
     }
 }
 

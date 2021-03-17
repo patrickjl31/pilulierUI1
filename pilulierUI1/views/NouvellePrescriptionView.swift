@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct NouvellePrescriptionView: View {
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
     @ObservedObject var datas:GestionDonnees
     // L'identificateur de la prescription. Si nouvelle id = ""
@@ -24,6 +25,12 @@ struct NouvellePrescriptionView: View {
     //@State var repeterTousLes: Int = 1
     @State var repeterTousLesS: String 
     @State var prises : [Int]
+    
+    @State var matin:String
+    @State var midi:String
+    @State var soir:String
+    @State var nuit:String
+    
     @State var prisesBool = [false,true,false,false]
     @State var posologie: String 
 
@@ -40,7 +47,7 @@ struct NouvellePrescriptionView: View {
             }
             //SearchList(datas: datas.AMMNoms, text: $identification)
             Text("Spécialité :")
-            if idPrescription != "" {
+            if idPrescription == "" {
                 SearchBar(myList: datas.AMMNoms, searchText: $identification)
             } else {
                 //getName(id: idPrescription)
@@ -56,21 +63,30 @@ struct NouvellePrescriptionView: View {
                 //prescription.repeterTousLes = Int(repetition) ?? 1
             } 
             
-            VStack{
-                Text("A prendre :")
-
-                HStack{
-                    //RadioButton(texte: "Matin", isLigth: $prisesBool[0])
-                    RadioButtonWithInt(texte: "Matin", isLigth: $prises[0])
-                    Spacer()
-                    RadioButtonWithInt(texte: "Midi", isLigth: $prises[1])
-                    Spacer()
-                    RadioButtonWithInt(texte: "Soir", isLigth: $prises[2])
-                    Spacer()
-                    RadioButtonWithInt(texte: "Nuit", isLigth: $prises[3])
+            HStack {
+                Text("Prises :")
+                    .background(Color.yellow)
+                    .padding()
+                VStack{
+                    //Text("Prises :")
+                    LigneRenseignement(titre: "Matin : ", style: .default, reponse: $matin)
+                    LigneRenseignement(titre: "Midi : ", style: .default, reponse: $midi)
+                    LigneRenseignement(titre: "Soir : ", style: .default, reponse: $soir)
+                    LigneRenseignement(titre: "Nuit : ", style: .default, reponse: $nuit)
+    /*
+                    HStack{
+                        //RadioButton(texte: "Matin", isLigth: $prisesBool[0])
+                        RadioButtonWithInt(texte: "Matin", isLigth: $prises[0])
+                        Spacer()
+                        RadioButtonWithInt(texte: "Midi", isLigth: $prises[1])
+                        Spacer()
+                        RadioButtonWithInt(texte: "Soir", isLigth: $prises[2])
+                        Spacer()
+                        RadioButtonWithInt(texte: "Nuit", isLigth: $prises[3])
+                    }
+                    .padding()
+    */
                 }
-                .padding()
-
             }
             HStack{
                 LigneRenseignement(titre: "Pendant : ", style: .decimalPad, reponse: $pendantS )
@@ -79,12 +95,16 @@ struct NouvellePrescriptionView: View {
             LigneRenseignement(titre: "Posologie : ", style: .default, reponse: $posologie)
             Button(action: {
                 saveMe()
-//                //datas.btnSaveNewPrescription(idPresrcription: id, nom: nom, pendant: pendant, repeter: repetition, prises: aPrendre, posologie: posologie)
+
            }, label: {
-                BigButton(texte: "Enregistrer la prescription", largeur: 300)
+                //BigButton(texte: "Enregistrer la prescription", largeur: 300)
+            Text("Enregistrer la prescription")
             })
+            .buttonStyle(SimpleButtonStyle())
         }
+    
     }
+    
     
 //    func prescritPour()->String  {
 //        let index = datas.patientCourant
@@ -99,6 +119,8 @@ struct NouvellePrescriptionView: View {
         let repeterTousLes = secureStringToInt(s: repeterTousLesS)
         //self.datas.btnSaveNewPrescription(idPrescription: idPrescription, nom: identification, pendant: pendant, repeter: repeterTousLes, prises: prises, posologie: posologie)
         self.datas.btnSaveNewPrescription(idPrescription: idPrescription, ident: identification, pendant: pendant, repeter: repeterTousLes, prises: prises, posologie: posologie)
+        // on quitte cette page
+        self.presentationMode.wrappedValue.dismiss()
     }
     
     func boolArray(myArray:[Bool]) -> [Int] {
@@ -125,12 +147,14 @@ struct NouvellePrescriptionView: View {
             identification = datas.lesPatients.l[datas.patientCourant].getNamePrescriptionWithId(myId: id)
         }
     }
+    
+    
 //
 }
 
 struct NouvellePrescriptionView_Previews: PreviewProvider {
     static var previews: some View {
-        NouvellePrescriptionView(datas: GestionDonnees(), idPrescription: "", identification: " machin", ordonneLe: "12/1/20", renouveleLe: "", pendantS: "8", repeterTousLesS: "1", prises: [0,1,0,0], posologie: "")
+        NouvellePrescriptionView(datas: GestionDonnees(), idPrescription: "", identification: " machin", ordonneLe: "12/1/20", renouveleLe: "", pendantS: "8", repeterTousLesS: "1", prises: [0,1,0,0], matin: "", midi: "",soir: "",nuit: "", posologie: "")
     }
 }
  

@@ -26,7 +26,9 @@ let BTN_ENREGISTRER = "Enregistrer"
 let MATIN = "Matin"
 let MIDI = "Midi"
 let SOIR = "Soir"
-let COUCHE = "Couché"
+let NUIT = "Nuit"
+
+let MOMENTS_DU_JOUR = [MATIN,MIDI,SOIR,NUIT]
 
 // Textes longs
 let HELPA = """

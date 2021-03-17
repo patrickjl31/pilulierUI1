@@ -20,6 +20,8 @@ struct PatientCourantView: View {
     //Fonctions utilitaires locales : nettoyer le tableau prescription.
     @State var newsPrescriptions : [Prescription] = []
     
+    @State private var refreshID = UUID()
+    
     var body: some View {
         let monIndex = datas.patientCourant
         if monIndex > -1 {
@@ -31,25 +33,22 @@ struct PatientCourantView: View {
                     // Liste des prescriptions
                     
                     //MyPrescriptionsList(prescriptions: moi.mesPrescriptions)
-                    MyPrescriptionsList(datas: datas, prescriptions: moi.mesPrescriptions)
+                    MyPrescriptionsList(datas: datas)
                     // On passe la prescription qui sera modifiée
                     //nouvelle prescription
-                    NavigationLink("Ajouter une prescription", destination: NouvellePrescriptionView(datas: datas, idPrescription: "", identification: "", pendantS: "8", repeterTousLesS: "1", prises: [0,1,0,0], posologie: ""))
-                    Spacer(minLength: 10)
-//                    Button(action: {
-//                        // Pour une nouvelle prescription, id = ""
-//                        //On créera la prescription
-//                        NavigationLink("Ajouter une prescription", destination: NouvellePrescriptionView(datas: datas, idPrescription: ""))
-//                        NouvellePrescriptionView(datas: datas, idPrescription: "")
-//                    }, label: {
-//                        BigButton(texte: "Ajouter une prescription", largeur: 300)
-//                    })
+                    NavigationLink("Ajouter une prescription", destination: NouvellePrescriptionView(datas: datas, idPrescription: "", identification: "", pendantS: "8", repeterTousLesS: "1",  prises: [0,1,0,0], matin: "", midi: "",soir: "",nuit: "", posologie: ""))
+                        .buttonStyle(SimpleButtonStyle())
+                    
+                    
+                    Spacer(minLength: 20)
                     
                 }
                 .navigationTitle("Fiche patient")
             }
         }
+        
     }
+    
     // Fonctions locales
     
 }

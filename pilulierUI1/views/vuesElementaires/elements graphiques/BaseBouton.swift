@@ -13,7 +13,7 @@ struct BaseBouton: View {
     var body: some View {
         Text(self.texte)
             
-            .font(.system(size: 12, weight:
+            .font(.system(size: 16, weight:
             .black, design: .default))
             .foregroundColor(Color("BleuSombre"))
             .padding(EdgeInsets(top: 3, leading: 10, bottom: 3, trailing: 10))

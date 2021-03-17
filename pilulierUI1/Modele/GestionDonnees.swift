@@ -14,7 +14,11 @@ class GestionDonnees: ObservableObject {
     let medicamentsAMM : AMMFile //= AMMFile(AMM: [])
     var AMMNoms:[String] = []
     
-    @Published var lesPatients : ListePatients //= ListePatients()
+    @Published var lesPatients : ListePatients {
+        willSet {
+            objectWillChange.send()
+        }
+    }
     @Published var patientCourant:Int = -1
     
     let userDefaults = UserDefaults.standard
@@ -130,7 +134,7 @@ class GestionDonnees: ObservableObject {
         prescription.isActiveAt(Date) indique si la prescription est en cours
      */
     func extractPilulierHebdo() -> [ [[String]]] {
-        var res : [ [[String]]] = []
+        let res : [ [[String]]] = []
         
         
         

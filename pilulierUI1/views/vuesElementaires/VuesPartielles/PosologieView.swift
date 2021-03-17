@@ -13,17 +13,28 @@ struct PosologieView: View {
     
     var body: some View {
         VStack {
-            Text("Prendre \(prisesToText(prises: prescription.prises))")
+            if prescription.matin.count > 0 {
+                Text("Prendre \(prescription.matin)")
+            }
+            if prescription.midi.count > 0 {
+                Text("Prendre \(prescription.midi)")
+            }
+            if prescription.soir.count > 0 {
+                Text("Prendre \(prescription.soir)")
+            }
+            if prescription.nuit.count > 0 {
+                Text("Prendre \(prescription.nuit)")
+            }
             Text(prescription.posologie)
         }
         .font(.footnote)
         
         
     }
-    
+    /*
     func prisesToText(prises: [Int])->String{
         var res:[String] = []
-        let moments = [MATIN,MIDI,SOIR,COUCHE]
+        let moments = MOMENTS_DU_JOUR
         for i in 0..<prises.count{
             if prises[i] > 0 && i < 4 {
                 res.append(moments[i])
@@ -38,6 +49,7 @@ struct PosologieView: View {
         }
         return resS
     }
+ */
 }
 
 struct PosologieView_Previews: PreviewProvider {
